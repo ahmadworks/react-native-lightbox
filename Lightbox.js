@@ -30,6 +30,7 @@ var Lightbox = createReactClass({
     backgroundColor: PropTypes.string,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
+    onLongPress: PropTypes.func,
     springConfig: PropTypes.shape({
       tension: PropTypes.number,
       friction: PropTypes.number,
@@ -47,6 +48,7 @@ var Lightbox = createReactClass({
       pinchToZoom: true,
       onOpen: () => {},
       onClose: () => {},
+      onLongPress: () => {},
     };
   },
 
@@ -144,6 +146,7 @@ var Lightbox = createReactClass({
           <TouchableHighlight
             underlayColor={this.props.underlayColor}
             onPress={this.open}
+            onLongPress={this.props.onLongPress}
           >
             {this.props.children}
           </TouchableHighlight>
